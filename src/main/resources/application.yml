@@ -1,0 +1,19 @@
+spring:
+  application:
+    name: mcp-server
+
+  # AI相关配置
+  ai:
+    mcp:
+      server:
+        enabled: true
+        name: math_mcp_server
+        version: 1.0.0
+        sse-endpoint: /api/v1/sse
+        sse-message-endpoint: /ap1/v1/mcp
+        capabilities:
+          tool: true
+logging:
+  level:
+    io.modelcontextprotocol: TRACE
+    org.springframework.ai.mcp: TRACE
