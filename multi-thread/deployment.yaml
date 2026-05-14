@@ -1,0 +1,27 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: multi-therad
+
+spec:
+  replicas: 1
+
+  selector:
+    matchLabels:
+      app: multi-therad
+
+  template:
+    metadata:
+      labels:
+        app: multi-therad
+
+    spec:
+      containers:
+        - name: multi-therad
+
+          image: multi-therad:1.0
+
+          imagePullPolicy: IfNotPresent
+
+          ports:
+            - containerPort: 8080
